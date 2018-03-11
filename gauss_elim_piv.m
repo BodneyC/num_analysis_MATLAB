@@ -1,8 +1,4 @@
-[W_1, x_1, p_1] = gauss_elim_piv([-.4 2.8 2.3 .8 -.2; .5 .2 -1.3 2.9 .6;2.4 2.1 1.3 -.1 4.1;-2.8 -.4 .2 -1 -3], 'naive')
-[W_2, x_2, p_2] = gauss_elim_piv([-.4 2.8 2.3 .8 -.2; .5 .2 -1.3 2.9 .6;2.4 2.1 1.3 -.1 4.1;-2.8 -.4 .2 -1 -3], 'scaled')
-[W_3, x_3, p_3] = gauss_elim_piv([-1.6 -3 1.3 .2 1.5;1.6 .5 2.3 .1 -5.8;-.4 2 1.4 2.1 1.9;-1.1 1.1 -.1 2.6 10], 'partial')
-
-function [W, x, p] = gauss_elim_piv(W, strat)
+function [W, p] = gauss_elim_piv(W, strat)
 
 	if nargin < 2
 		strat = 'no_piv';
@@ -26,8 +22,6 @@ function [W, x, p] = gauss_elim_piv(W, strat)
 	
 	A = W(:,1:end - 1);
 	b = W(:, end);
-	
-	x = back_sub(A, b, p);
 	
 end
 

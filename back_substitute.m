@@ -1,5 +1,5 @@
 % Called function %
-function [x] = Ax_b (M)
+function [x] = back_substitute(M)
 	
 	[rows, cols] = size(M);
 		
